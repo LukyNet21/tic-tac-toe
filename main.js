@@ -1,7 +1,7 @@
 var player = 'X';
 state = Array(9).fill(null);
 var gameEnded = false
-message(`Player ${player} is playing!`)
+message(`Player ${player} starts!`)
 
 function createBoard() {
     const board = document.getElementById('board');
@@ -81,6 +81,6 @@ resetBtn.addEventListener('click', () => {
     state = Array(9).fill(null);
     player = 'X';
     gameEnded = false;
-    message(`Player ${player} is playing!`);
+    message(`Player ${player} starts!`)
     createBoard();
 })
