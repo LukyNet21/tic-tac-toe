@@ -1,6 +1,7 @@
 var player = 'X';
 state = Array(9).fill(null);
 var gameEnded = false
+message(`Player ${player} is playing!`)
 
 function createBoard() {
     const board = document.getElementById('board');
@@ -39,6 +40,7 @@ function handleClick(e){
     if (state[i] || gameEnded) {
         return;
     }
+
     state[i] = player;
     cell.textContent = player;
     cell.classList.add('active');
@@ -65,7 +67,7 @@ function handleClick(e){
         gameEnded = true
     } else {
         player = player === 'X' ? 'O' : 'X';
-        message(`Player ${player} is playing!`)
+        message(`Player ${player} is playing!`);
     }
 }
 
@@ -78,6 +80,7 @@ const resetBtn = document.getElementById('restart');
 resetBtn.addEventListener('click', () => {
     state = Array(9).fill(null);
     player = 'X';
-    gameEnded = false
+    gameEnded = false;
+    message(`Player ${player} is playing!`);
     createBoard();
 })

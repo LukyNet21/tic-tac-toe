@@ -7,6 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     color: #333;
+    background: linear-gradient(135deg, #ffcc33, #ff6699);
 }
 
 .game-container {
@@ -25,12 +26,17 @@ body {
 }
 
 .cell {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 120px;
     height: 120px;
-    border: 1px solid #333;
-    transition: linear 0.1s;
+    border: 2px solid #333;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
     font-size: 3rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .cell:hover {
@@ -51,5 +57,21 @@ body {
 }
 
 .cell.winner {
-    transform: scale(1.05);
+    animation: winning 1s infinite;
+}
+
+#message {
+    font-size: xx-large;
+}
+
+@keyframes winning {
+    0% {
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(0.95);
+    }
 }
