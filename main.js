@@ -124,6 +124,7 @@ resetBtn.addEventListener('click', () => {
 })
 
 const botmode = document.getElementById('botmode');
+botmode.checked = false;
 botmode.addEventListener('click', () => {
     bot = botmode.checked ? true : false;
     message(`Bot mode is now ${bot ? 'enabled' : 'disabled' }`);

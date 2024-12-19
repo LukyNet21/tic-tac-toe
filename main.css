@@ -86,3 +86,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+#restart:hover {
+    background-color: #424242;
+}
